@@ -1,0 +1,25 @@
+body {
+    font-size: 1.25rem;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    padding: 1rem;
+    text-align: center;
+    background-color: wheat;
+}
+
+textarea {
+    width: 600px;
+    height: 200px;
+    background-color: lightblue;
+    margin: 1rem;
+    padding: 1rem;
+}
+input {
+    padding: 0.5rem;
+    margin: 0.5rem
+}
+button { 
+    background-color: red;
+    color: white;
+    padding: 0.25rem;
+    margin: 0.5rem;
+}

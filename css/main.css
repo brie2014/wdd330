@@ -1,0 +1,69 @@
+body {
+    font-size: 18px;
+    margin-top: 0;
+    background-color: lightgray;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header,main,footer {
+    margin: 0 auto;
+    max-width:750px;
+}
+
+header,footer {
+    background-color: navy;
+    color: #fff;
+    padding: 1.5rem;
+}
+
+header {
+    display: grid;
+    grid-template-areas: "name pic" "class pic";
+}
+
+h1, h2 {
+    margin: 1rem;
+    text-align: left;
+}
+
+h1 {
+    font-size: 3rem;
+    grid-area: name;
+    color: white;
+}
+
+h2 {
+    grid-area: class;
+    color:rgb(191, 191, 252);
+    font-style:italic;
+}
+
+img {
+    grid-area: pic;
+    justify-content: right;
+    box-shadow: 10px 10px 30px #777;
+}
+
+ol {
+    list-style: none;
+    padding-left: 0.5rem;
+}
+
+footer {
+    text-align: center;
+}
+
+footer a {
+    color: white;
+}
+
+ul {
+    text-align: left;
+}
+
+li {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
+
