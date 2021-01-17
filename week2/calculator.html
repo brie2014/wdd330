@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Activity- Week 2 - Calculator</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <header>
+        <h1>Brienna Sambrano</h1>
+        <h2>Week 2 Team Activity: Calculator</h2>
+        <img src="../images/briennaJME.jpg" alt="picture of Brienna Sambrano">
+    </header>
+    <main class="text-left p-3">
+        <!-- Print Out Entered Number -->
+        <h3 class="text-left mt-3">Print Number</h3>
+        <div class="form-group">
+            <input id="data" class="form-control w-25 d-inline mr-3" placeholder="Type a Number">
+            <button class="btn btn-primary" onclick="displayData()">Print</button>
+        </div>
+        <div id="dataDiv" class="output"></div>
+
+        <!-- Sum Up to Entered Number -->
+        <h3 class="text-left mt-5">Sum Up to Entered Number</h3>
+        <div class="form-group">
+            <input id="numberToSum" class="form-control w-25 d-inline mr-3" placeholder="Type a Number">
+            <button class="btn btn-primary" onclick="sumDataUp(numberToSum)">Sum Up to My Number</button>
+        </div>
+        <div id="sumUp" class="output"></div>
+
+        <!-- Sum of Entered Number -->
+        <h3 class="text-left mt-5">Add Entered Numbers</h3>
+        <div class="form-group">
+            <input id="number1" class="form-control w-25 d-inline" placeholder="Type a Number">
+            <input id="number2" class="form-control w-25 d-inline mr-3" placeholder="Type a Number">
+            <button class="btn btn-primary" onclick="sum()">Add</button>
+        <div id="sum" class="output"></div>
+        </div>
+
+        <!-- Calculator -->
+        <h3 class="text-left mt-5">Calculator</h3>
+        <div class="form-group">
+            <input id="n1" class="form-control w-25 d-inline" placeholder="Type a Number">
+            <input id="n2" class="form-control w-25 d-inline" placeholder="Type a Number">
+            <button class="btn btn-primary" onclick="calculator(addition)">Add</button>
+            <button class="btn btn-primary" onclick="calculator(subtraction)">Subtract</button>
+            <button class="btn btn-primary" onclick="calculator(multiplication)">Multiply</button>
+            <button class="btn btn-primary" onclick="calculator(division)">Divide</button>
+            <div id="answer" class="output"></div>
+        </div>
+
+        <br> <br>
+        <div class="text-center">
+            <a class="btn btn-info text-white" href="./"><i class="fa fa-arrow-left"></i>Back</a>
+            <a class="btn btn-info text-white" href="../"><i class="fa fa-arrow-left"></i>Home</a>
+        </div>
+        <br>
+    </main>
+    <footer class="footer text-center">
+        <p>
+        &copy; Brienna Sambrano | Georgia, USA | <a href="https://www.byui.edu/online" target="_blank" title="BYU-Idaho Online Learning">BYU-Idaho Online Learning</a>
+        </p>
+    </footer>
+</body>
+
+<script defer src="js/calculator.js"></script>
+
+</html>
