@@ -11,7 +11,7 @@ const quiz = [
     ["What is Captain America's real name?", "Steve Rogers"]
 ];
 
-document.getElementById("startBtn").addEventListener("click", start(quiz));
+document.getElementById("startBtn").addEventListener("click", () => {start(quiz)});
 
 function start(quiz){
     let score = 0;
@@ -28,7 +28,7 @@ function start(quiz){
    
     //Callback functions
     function getAnswer () {
-        const response = document.getElementById("answer").value;
+        const response = document.getElementById("answer").innerHTML;
         console.log(response);
     }
 
