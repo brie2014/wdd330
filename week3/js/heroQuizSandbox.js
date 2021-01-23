@@ -11,22 +11,29 @@ const quiz = [
     ["What is Captain America's real name?", "Steve Rogers"]
 ];
 
-document.getElementById("startBtn").addEventListener("click", start);
+document.getElementById("startBtn").addEventListener("click", start(quiz));
 
 function start(quiz){
     let score = 0;
     // main game loop
     for(const [question,answer] of quiz) {
         document.getElementById("question").innerHTML = question;
-        const response = document.getElementById("answer").innerHTML;
-        document.getElementById("submitBtn").addEventListener("click", check(answer, response));
+        const response = document.getElementById("submitBtn").addEventListener("click", getAnswer);
+        check(answer, response);
+
+
     }
     // end of main game loop
     gameOver();
    
     //Callback functions
+    function getAnswer () {
+        const response = document.getElementById("answer").value;
+        console.log(response);
+    }
+
     function check(answer,response){
-        
+    
         if(response === answer){
             document.getElementById("feedback").innerHTML ="Correct!";
             score++;
@@ -40,3 +47,4 @@ function start(quiz){
         document.getElementById("feedback").innerHTML ="Game Over, you scored " + score + " points.";
     }
 }
+
