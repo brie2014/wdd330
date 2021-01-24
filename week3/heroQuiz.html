@@ -1,24 +1,27 @@
 <!doctype html>
 <html lang='en'>
+
 <head>
-<meta charset='utf-8'>
-<meta name='description' content='A JavaScript Quiz Game'>
-<title>Superhero Quiz</title>
-<link rel='stylesheet' href='css/heroQuiz.css'>
+    <meta charset='utf-8'>
+    <meta name='description' content='A JavaScript Quiz Game'>
+    <title>Superhero Quiz</title>
+    <link rel='stylesheet' href='css/heroQuiz.css'>
 </head>
 <body>
-    <section class='dojo'>
-    <div class='quiz-body'>
         <header>
-        <h1>Superhero Quiz</h1>
-        <button id="startBtn" class="startBtn">Start Quiz</button>
-        <div id="question"></div>
-        <input type="text" id="answer">
-        <button id="submitBtn" class="submitBtn">Check Answer</button>
-        <div id="feedback"></div>
+            <h1>Superhero Trivia</h1>
         </header>
-    </div>
-    </section>
-<script src='js/heroQuiz.js'></script>
+        <div id="results"></div>
+        <div class="quiz-container">
+            <div id="quiz"></div>
+          </div>
+          <div class="buttons">
+            <button id="previousBtn">Previous</button>
+            <button id="nextBtn">Next</button>
+            <button id="submitBtn">Submit</button>
+          </div>
+          
+    <script src='js/heroQuiz.js'></script>
 </body>
+
 </html>
