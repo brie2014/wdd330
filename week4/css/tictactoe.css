@@ -12,3 +12,11 @@
     height: 100px;
     font-size: 60px;
 }
+
+.reset-btn {
+   background-color: gray;
+}
+
+.reset-btn:hover {
+    background-color: red;
+}
