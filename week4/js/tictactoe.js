@@ -9,6 +9,7 @@ function resetGame() {
     document.getElementById("b7").innerHTML = '';
     document.getElementById("b8").innerHTML = '';
     document.getElementById("b9").innerHTML = '';
+    document.getElementById("print").innerHTML = 'Player X Starts';
 
 }
 

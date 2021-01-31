@@ -1,6 +1,6 @@
 html {
     font-size: 10px;
-    background: url('./background.jpg') bottom center;
+    background: linear-gradient(blue, teal, green);
     background-size: cover;
   }
   
@@ -19,12 +19,12 @@ html {
   }
   
   .key {
-    border: .4rem solid black;
+    border: .4rem solid gray;
     border-radius: .5rem;
     margin: 1rem;
     font-size: 1.5rem;
     padding: 1rem .5rem;
-    transition: all .07s ease;
+    transition: all .1s ease;
     width: 10rem;
     text-align: center;
     color: white;
@@ -33,7 +33,7 @@ html {
   }
   
   .playing {
-    transform: scale(1.1);
+    transform: scale(1.3);
     border-color: #ffc600;
     box-shadow: 0 0 1rem #ffc600;
   }
