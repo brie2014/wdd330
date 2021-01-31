@@ -20,3 +20,11 @@
 .reset-btn:hover {
     background-color: red;
 }
+
+#print {
+    font-size: 2rem;
+}
+
+.game-container:nth-last-child() {
+    border: none;
+}
