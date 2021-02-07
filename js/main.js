@@ -10,6 +10,9 @@ const links = [
 
     {label: "Week 04 Notes and Practice",
     url: "week4/"}
+
+    {label: "Week 05 Notes and Practice",
+    url: "week5/"}
 ];
 
 const ol = document.querySelector('ol');
