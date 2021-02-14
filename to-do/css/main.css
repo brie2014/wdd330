@@ -83,6 +83,12 @@ input {
     width: 30%;
 }
 
+.remove-btn {
+    color: red;
+    font-weight: bold;
+    background-color: white;
+}
+
 input[type=checkbox]:checked + label{
     text-decoration: line-through;
   }
