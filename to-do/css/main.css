@@ -62,7 +62,6 @@ button {
 input {
     padding: 0.5rem;
     font-size: 1.1rem;
-    color: white;
 }
 
 .add-items {
@@ -73,7 +72,9 @@ input {
 
 #add-btn {
     background-color: navy;
+    color: white;
 }
+
 
 #reset-btn {
     background-color: red;
