@@ -17,7 +17,6 @@ const item = {
 
 }
 
-
 function checkToDo(e) {
    let item = e.target.parentNode; 
    const el = e.target;
@@ -57,5 +56,7 @@ function populateList(items = [], toDoList) {
       `;
     }).join('');
     }
+
+
 
 export {addToDo, checkToDo, deleteToDo, resetList, populateList}

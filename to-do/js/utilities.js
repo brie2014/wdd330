@@ -3,7 +3,7 @@ import {addToDo, checkToDo, deleteToDo, resetList} from "./ls.js";
 
 //Main Function
 function handleClick(e) {
-    if (e.target.id == 'add-btn')
+    if (e.target.name == 'add-btn')
     addToDo(e);
 
     if (e.target.name == 'checkbox') 
