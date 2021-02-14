@@ -14,6 +14,7 @@ const item = {
   populateList(items, toDoList);
   localStorage.setItem('items', JSON.stringify(items));
   this.reset();
+  location.reload();
 
 }
 
