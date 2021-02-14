@@ -18,6 +18,19 @@ filterButtons.addEventListener('click', handleClick);
 
 
 
+/*Things to Fix
+
+-styling in different screen sizes
+-nicer fonts, button styles, etc.
+-reload list in filtered view when item is checked or deleted, without it going back to all view
+-count of items still to do
+-
+
+*/
+
+
+
+
 
 
 
