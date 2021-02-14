@@ -36,7 +36,7 @@ const hikeList = [
 
 
 const imgBasePath = "//byui-cit.github.io/cit261/examples/";
-export default class Hikes {
+export class Hikes {
     //Lets us access data without exporting it
     getAllHikes() {
         return hikeList;

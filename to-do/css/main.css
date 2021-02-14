@@ -1,0 +1,103 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    background-color: cornflowerblue;
+
+}
+
+h1 {
+    text-align: center;
+    color: navy;
+    padding: 1rem;
+}
+
+.list-display {
+    border: black 1px solid;
+    width: 60%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.list-item {
+    border-bottom: black 1px solid;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+
+}
+
+.list-footer {
+    display: flex;
+    justify-content: flex-end;
+    color: navy;
+    font-weight: bold;
+}
+
+.list-footer button {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: blue;
+    color: white
+}
+
+form {
+    text-align: center;
+    padding: 2rem;
+}
+
+button {
+    background-color: white;
+    border: none;
+    color: red;
+    border-radius: 10px;
+
+}
+
+input {
+    padding: 0.5rem;
+}
+
+.add-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#add-btn {
+    background-color: navy;
+    color: white;
+}
+
+#reset-btn {
+    background-color: red;
+    color: white;
+    padding: 0.5rem;
+    margin: 2rem;
+    width: 30%;
+
+}
+
+input[type=checkbox]:checked + label{
+    text-decoration: line-through;
+  }
+
+.filter-active {
+    background-color: navy;
+    color: white;
+}
+
+.footer-btn:hover, .footer-btn:active {
+    background-color: white;
+    color: blue;
+    border: red 5px solid;
+}

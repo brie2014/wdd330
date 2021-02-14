@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Week 5 notes, activities, and questions.">
+    <title>To Do Application</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <h1> To Do List</h1>
+    <div class="list-display">
+        <ul class="toDoList">
+        </ul>
+        <div class="list-footer" id="filter-btns">
+            <button id="all" class="footer-btn">All</button>
+            <button id="active" class="footer-btn">Active</button>
+            <button id="completed" class="footer-btn">Completed</button>
+        </div>
+    </div>
+    <form class="add-items">
+        <span>
+            <input type="text" name="item" placeholder="I need to..." required>
+            <input type="submit" name="add-btn" value="+" id="add-btn">
+        </span>
+        <button id="reset-btn">Clear All Items</button>
+    </form>
+    
+    <script src=js/main.js type="module"></script>
+</body>
+
+</html>
