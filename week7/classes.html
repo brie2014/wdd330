@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="using classes and local storage to make a list of vehicles">
+    <title>Using Classes: Vehicle List w/ Local Storage</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/classes.css">
+</head>
+
+<body>
+    <header>
+        <h1>Using Classes</h1>
+        <h2>Vehicle List w/ Local Storage</h2>
+    </header>
+    <main>
+        <h3>Vehicles</h3>
+        <div id=vehicles class="card-container">
+        </div>
+        <div class="comment-container" id="comment-container-${hike.name}">
+            <h3 class="comment-container-title">Add a Vehicle</h3>
+            <form id="comment-form-${hike.name}">
+                <div class="comment-input-area">
+                    <textarea placeholder="Vehicle Name" class="comment-input form-control" id="name"></textarea>
+                    <textarea placeholder="Number of Wheels" class="comment-input form-control" id="wheels"></textarea>
+                    <textarea placeholder="Top Speed" class="comment-input form-control" id="speed"></textarea>
+                    <textarea placeholder="Color" class="comment-input form-control" id="color"></textarea>
+                </div>
+                <input type="submit" class="submit form-control w-50 d-inline" value="Add Vehicle" />
+            </form>
+        </div>
+        <br> <br>
+        <div class="text-center">
+            <a class="btn btn-info text-white" href="../week7"><i class="fa fa-arrow-left"></i>Back</a>
+            <a class="btn btn-info text-white" href="../"><i class="fa fa-arrow-left"></i>Home</a>
+        </div>
+        <br>
+    </main>
+    
+    <footer class="footer text-center">
+        <p>
+            &copy; Brienna Sambrano | Georgia, USA | <a href="https://www.byui.edu/online" target="_blank"
+                title="BYU-Idaho Online Learning">BYU-Idaho Online Learning</a>
+        </p>
+    </footer>
+    <script src="js/classes.js"></script>
+</body>
+
+</html>

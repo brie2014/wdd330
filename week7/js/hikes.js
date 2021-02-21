@@ -153,22 +153,25 @@ function detailedHike(hike) {
                 <h3>Difficulty</h3>
                 <p>${hike.difficulty}</p>
             </div>
-            <div>
-                <h3>Description</h3>
-                <p>${hike.description}</p>
-            </div>
-            <div>
-                <h3>How to get there</h3>
-                <p>${hike.directions}</p>
-            </div>
+
+    </div>
+    <div class="extra-info">
+    <div>
+    <h3>Description</h3>
+    <p>${hike.description}</p>
+</div>
+<div>
+    <h3>How to get there</h3>
+    <p>${hike.directions}</p>
+</div>
     </div>
     <div class="comment-container" id="comment-container-${hike.name}">
-    <h3 class="comment-container-title">Comments</h3>
+    <h4 class="comment-container-title">Add a Comment</h4>
     <form id="comment-form-${hike.name}">
       <textarea
-        placeholder="Add a comment"
+        rows="10" placeholder="Add a comment"
         class="comment-input"></textarea>
-      <input type="submit" class="comment-submit" value="Reply"/>
+      <input type="submit" class="comment-submit" value="Share Comment"/>
       <input type="hidden" class="hike-name" value="${hike.name}">
     </form>
     </div>

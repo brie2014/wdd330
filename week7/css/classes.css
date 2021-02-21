@@ -1,0 +1,35 @@
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.card {
+    padding: 1rem;
+    margin: 1rem;
+    background-color: rgb(223, 221, 221);
+
+}
+
+.card h4 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.comment-input-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+
+}
+
+.submit {
+    margin: 1rem;
+    background-color: green;
+    color: white;
+    
+}

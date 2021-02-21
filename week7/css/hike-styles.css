@@ -1,8 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Segoe' 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   img {
@@ -15,55 +14,111 @@ h1, h2 {
   }
 
 h1 {
-  background-color: lightblue;
+  background-color: rgba(83,21,226,1);
   padding: 3rem;
-
+  color: white;
+  font-size: 4rem;
 }
+ 
 .name {
-  background-color: gray;
+  font-size: 2rem;
   padding: 1rem;
-}
-
-h2 {
-  margin-bottom: 0;
+  margin: 1rem 0 0;
+  color: white;
 }
 
 .card {
-    display: flex;
     padding: 1rem;
-    background-color: rgb(211, 229, 235);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+  }
+
+  .comment-container {
+    padding: 1rem;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
   }
 
 
-.info {
+
+.info, .extra-info {
     margin: 0 1rem;
     padding: 0 1rem;
-    width: 50%;
   }
 
   ul{
     padding: 0;
+    margin: 0;
   }
 
   ul li {
     list-style: none;
     margin-bottom: 4rem;
+    background: linear-gradient(270deg, rgba(221,229,235,1) 0%, rgba(83,21,226,1) 100%);
   }
 
   .hidden {
     display: none;
   }
 
-  button {
-    padding: 0.5rem;
+  button, .comment-submit {
+    padding: 1rem;
     color: white;
     background-color: blue;
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Heavy', Arial, sans-serif;
     align-content: center;
-    margin: 0 auto;
+    margin: 1rem auto 0;
+  }
+
+  button {
+    width: 50%;
+    
   }
 
   main {
     display: flex;
     flex-direction: column;
+  }
+
+  .comment-body, .comment-date, .comments h4 {
+    padding: 0.5rem 1rem;
+    margin: 0rem;
+  }
+
+  .comment-input {
+    padding: 1rem;
+    height: 60%;
+  }
+
+  .comment:nth-child(even) {
+    background-color: rgba(221,229,235,1);
+  }
+
+  .comment:nth-child(odd) {
+    background-color: white;
+  }
+
+  .comments h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    background: linear-gradient(0deg, rgba(221,229,235,1) 0%, rgba(83,21,226,1) 40%);
+    padding: 2rem;
+    color: white;
+  }
+
+  h4 {
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.25rem;
   }
