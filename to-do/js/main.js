@@ -24,7 +24,7 @@ filterButtons.addEventListener('click', handleClick);
 -nicer fonts, button styles, etc.
 -reload list in filtered view when item is checked or deleted, without it going back to all view
 -count of items still to do
--
+-styling to show what filter is on
 
 */
 
