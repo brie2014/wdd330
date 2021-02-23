@@ -56,6 +56,7 @@ button {
     border: none;
     color: white;
     border-radius: 10px;
+    cursor: pointer;
 
 }
 
@@ -73,6 +74,11 @@ input {
 #add-btn {
     background-color: navy;
     color: white;
+    cursor: pointer;
+}
+
+.checkbox {
+    cursor: pointer;
 }
 
 
@@ -90,6 +96,10 @@ input {
     background-color: white;
 }
 
+.remove-btn:hover, .remove-btn:active {
+    transform: scale(1.5);
+}
+
 input[type=checkbox]:checked + label{
     text-decoration: line-through;
   }
@@ -100,6 +110,7 @@ input[type=checkbox]:checked + label{
 }
 
 .footer-btn:hover, .footer-btn:active {
+    transform: scale(1.2);
     background-color: white;
     color: blue;
     border: red 1px solid;

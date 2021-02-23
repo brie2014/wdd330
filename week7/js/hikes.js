@@ -99,6 +99,7 @@ export default class Hikes {
         const backButton = document.createElement('button');
         backButton.innerHTML = 'Back to All Hikes';
         backButton.addEventListener('click', () => {
+            location.reload();
             this.showAllHikes();
         });
         //puts button before element
