@@ -17,7 +17,7 @@ const hikeList = [
     },
 
     {
-        id: 2,
+      id: 2,
         name: "Teton Canyon",
         imgSrc: "falls.jpg",
         imgAlt: "Image of Bechler Falls",
@@ -43,8 +43,10 @@ const hikeList = [
 ];
 
 const comments = JSON.parse(localStorage.getItem('hikes')) || [];
-const commentList = document.querySelector('.comments');
+con
+  st commentList = document.querySelector('.comments');
 
+  
 
 const imgBasePath = "//byui-cit.github.io/cit261/examples/";
 export default class Hikes {

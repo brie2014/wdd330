@@ -20,12 +20,10 @@ listButtons.addEventListener('click', listInteractions);
 resetBtn.addEventListener('click', resetList);
 filterButtons.addEventListener('click', filterList);
 
-
-
-/*Things to Fix
+/*Ideas to Improve
 -styling in different screen sizes
 -nicer fonts, button styles, etc.
--count of items still to do
+-count of items still left to do
 -styling to show what filter is on
 */
 

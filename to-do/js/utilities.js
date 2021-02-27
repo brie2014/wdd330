@@ -11,8 +11,3 @@ export function listInteractions(e) {
     deleteToDo(e);
 
 }
-
-
-
-
-    
