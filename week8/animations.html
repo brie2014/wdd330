@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Practice using keyframes, transitions, transforms, and canvas">
+    <title>Animations and Canvas Practice</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <header>
+        <h1>Brienna Sambrano</h1>
+        <h2>Animations and Canvas Practice</h2>
+        <img src="../images/briennaJME.jpg" alt="picture of Brienna Sambrano">
+    </header>
+    <main>
+        <div class='animations'>
+            <div class='move-down'>Down</div>
+            <div class='move-diagonal'>Diagonal</div>
+            <div class='move-right'>Right</div>
+            <div>
+                <svg class="mickey-mouse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <circle cx="20" cy="20" r="10" fill="purple"/>
+                    <circle cx="10" cy="10" r="5" fill="purple"/>
+                    <circle cx="30" cy="10" r="5" fill="purple"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <div>
+                <canvas id="canvas-1" class="myCanvas" width="200px" height="200px">
+                    Sorry! Your browser doesn’t support Canvas.
+                </canvas>
+            </div>
+            <div>
+                <canvas id="canvas-2" class="myCanvas" width="200px" height="200px">
+                    Sorry! Your browser doesn’t support Canvas.
+                </canvas>
+                <button name="saveButton" id="saveButton">Save Drawing</button>
+            </div>
+        </div>
+
+        <br> <br>
+        <div class="text-center">
+            <a class="btn btn-info text-white" href="../"><i class="fa fa-arrow-left"></i>Back</a>
+            <a class="btn btn-info text-white" href="../"><i class="fa fa-arrow-left"></i>Home</a>
+        </div>
+        <br>
+    </main>
+    <footer class="footer text-center">
+        <p>
+        &copy; Brienna Sambrano | Georgia, USA | <a href="https://www.byui.edu/online" target="_blank" title="BYU-Idaho Online Learning">BYU-Idaho Online Learning</a>
+        </p>
+    </footer>
+    <script src="js/canvas.js"></script>
+</body>
+</html>

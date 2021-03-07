@@ -1,0 +1,101 @@
+@keyframes moveRight { 
+    from {
+    transform: translate(0%);
+    }
+    to {
+    transform: translateX(100%);
+    }
+}
+
+@keyframes moveDown { 
+    from {
+    transform: translate(0%);
+    }
+    to {
+    transform: translateY(100%);
+    }
+}
+
+@keyframes moveDiagonal { 
+    0% {
+    transform: translate(0%);
+    }
+    25% {
+    transform: translate(100%,100%);
+    }
+    50% {
+        transform: translate(0%);
+        }
+
+    75%  {
+        transform: translate(-100%,100%);
+        }
+    100% {
+        transform: translate(0%);
+        }
+}
+
+@keyframes blackToWhite {
+    0% {
+    background-color: black;
+    }
+
+    100% {
+        background-color: white;
+        }
+}
+
+.animations {
+   display: grid;
+   grid-template-columns: repeat(3, 33.33%);
+   animation: 10s ease-in infinite alternate-reverse 300ms  blackToWhite; 
+}
+
+.animations div {
+    padding: 1rem;
+    margin: 1rem;
+    color: white;
+}
+
+.move-down {
+    width: 10rem;
+    height: 10rem;
+    background-color: red;
+    border-radius: 50%;
+    animation: 1s ease-in infinite alternate 300ms moveDown; 
+}
+.move-diagonal {
+    width: 10rem;
+    height: 10rem;
+    background-color: green;
+    border-radius: 50%;
+    animation: 4s ease-in infinite  300ms moveDiagonal; 
+}
+
+.move-right {
+    width: 10rem;
+    height: 10rem;
+    background-color: blue;
+    border-radius: 50%;
+    animation: 1s ease-in infinite alternate 300ms  moveRight; 
+}
+
+.myCanvas {
+    border: dotted 2px black;
+}
+
+.canvas-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.canvas-container div, .canvas-container canvas {
+    justify-items: center;
+    margin: 1rem;
+}
+
+.mickey-mouse {
+    margin-top: 10rem;
+    animation: 1s ease-in infinite alternate-reverse 300ms  moveRight; 
+    height: 20rem;
+}

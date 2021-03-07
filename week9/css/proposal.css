@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Patua+One&display=swap');
+    :root{
+        --main-bg: #fcf5c7;
+        --accent1:#ffee93 ;
+        --accent2:  #94c9f8 ;
+        --accent3: #3a1e9e; 
+        --accent4:#cc0b2b;
+        --dark-text: #000000;
+        --light-text: #ffffff;
+        --header-font: 'Bowlby One SC', cursive;
+        --heading-font: 'Patua One', cursive;
+        --paragraph-font: 'Open Sans', sans-serif;
+    }
+
+main {
+    background-color: var(--main-bg);
+    font-family: var(--paragraph-font);
+    color: var(--dark-text);
+    font-size: 16px;
+    padding: 1em 2em;
+    margin: 0 auto;
+}
+
+body {
+    background-color: var(--accent1);
+    text-align: left;
+}
+
+li {
+    font-size: 16px;
+}
+
+header {
+    background-color: var(--accent2);
+    color: var(--accent4);
+    font-size: 1.25em;
+    font-family: var(--header-font);
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--accent4)
+
+}
+
+h2 {
+    background-color: var(--accent3);
+    color: var(--light-text);
+    padding: 1rem;
+    font-family: var(--heading-font);
+    border-radius: 10px;
+    max-width: fit-content;
+}
+
+footer {
+    background-color: var(--accent3);
+}
+
+footer a {
+    color: var(--light-text);
+}
+
+a {
+    color: var(--accent3);
+    cursor: pointer;
+}
+
+nav {
+    background-color: var(--accent4);
+    font-family: var(--heading-font);
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+}
+
+nav ul li {
+    text-align: center;
+    padding: 0.5em;
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    font-size: 0.8em;
+    text-decoration: none;
+    color: var(--header-heading);
+}
+
+nav li:hover {
+    background-color: white;
+    color: var(--accent4)
+}
+
+h3 {
+    color: var(--accent3);
+    font-family: var(--heading-font);
+    font-size: 1.5em;
+    margin-top: 2rem;
+}
+
+img {
+    max-width: 80%;
+}
+
+table {
+    margin: 1em;
+    border-collapse: collapse;
+}
+
+table, th, td, caption {
+    border: solid 1px var(--dark-text);
+    color: var(--dark-text);
+  }
+
+th, td {
+    padding: 0.5em;
+}
+
+.persona tr>:nth-child(1){ 
+    background-color: var(--main-bg);
+    text-align: center;
+    }
+
+caption {
+    font-size: 1.25em;
+    padding: 0.5em;
+}
+
+.colors{
+    width: 100%;
+    min-width: 350px;
+    margin: auto;
+    text-align: center;
+}      
+.colors th{
+    background-color: var(--nav-color);
+    height: 2em;
+    border-radius: 3px;
+}
+.colors td{
+    width: 20%;
+    height: 3em;
+}
+
+.main-bg{
+    background-color: var(--main-bg)
+}
+
+.accent1 {
+    background-color: var(--accent1);
+}
+.accent2 {
+    background-color: var(--accent2);
+}
+.accent3 {
+    background-color: var(--accent3);
+}
+.accent4 {
+    background-color: var(--accent4);
+}
+.light-text{
+    background-color: var(--light-text)
+}
+.dark-text{
+    background-color: var(--dark-text)
+}
+
+.typography tr:nth-child(1) td:nth-child(1) {
+    background-color: var(--accent3);
+}
+
+.typography .header h3 {
+    color: var(--light-text);
+    font-family: var(--header-font);
+}
+
+.typography h3 {
+    margin: 1rem;
+
+}
+
+.typography .dark-bg {
+    background-color: var(--accent4);
+    color: var(--light-text);
+}
+
+.typography .light-bg {
+    background-color: var(--main-bg);
+}
+
+.typography table {
+    table-layout: fixed; 
+    width: 100%;
+}
