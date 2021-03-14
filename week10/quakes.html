@@ -4,13 +4,26 @@
     <meta charset="utf-8" />
         <title>Local Quakes</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="team activity using earthquake API to generate list of earthquakes">
+    <title>Quake List-API Activity</title>
+        <link rel="stylesheet" href="css/quakes.css">
     </head>
 
     <body>
         <main>
-            <h1>Quake List</h1>
+            <h1>Earthquakes Near Me</h1>
+            <div id="quake-input">
+                <label>Search Radius (km)<input type="number" id="radius" placeholder="100"></label>
+
+                <label>Start Date:<input type="date" id="start"></label>
+                
+                <label>End Date:<input type="date" id="end"></label>
+
+                <button type="submit" id="find-quakes">Find Quakes</button>
+            </div>
             <ul id="quakeList"></ul>
-            
+
+
         </main>
     </body>
     <script src="js/index.js" type="module"></script>

@@ -1,8 +1,9 @@
 import QuakesController from './QuakesController.js';
 
-//const el = document.getElementById('#quakeList');
+let button = document.getElementById('find-quakes');
 
-const Quake = new QuakesController('#quakeList');
-Quake.init();
 
-console.log(Quake)
+button.addEventListener("click", () => {
+    const Quake = new QuakesController('#quakeList');
+    Quake.init()
+    } )

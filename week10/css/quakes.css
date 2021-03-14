@@ -1,0 +1,71 @@
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(192, 221, 206);
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(19, 105, 105);
+}
+
+#quake-input {
+    background: no-repeat center url(https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png);
+    display: grid;
+    width: 50%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+#quake-input label {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+input, button {
+    padding: 0.5rem;
+}
+
+button {
+    width: 50%;
+    margin: 0 auto;
+    background-color:rgb(19, 105, 105);
+    color: white;
+    border: 3px white solid;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#quakeList {
+    padding: 2rem;
+    list-style: none;
+    margin: 0 auto;
+}
+
+li {
+    padding: 0.5rem;
+    border: 1px solid black;
+    margin: 0 15%;
+}
+
+li div {
+    margin: 0 auto;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+li:nth-child(odd) {
+    background-color: rgb(163, 224, 194);
+
+}
+
+li:nth-child(even) {
+    background-color: white;
+
+}
