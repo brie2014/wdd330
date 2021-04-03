@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Patua+One&display=swap');
+
+$light-yellow: #fcf5c7;
+$dark-yellow:#ffee93 ;
+$light-blue:  #94c9f8 ;
+$dark-blue: #3a1e9e; 
+$red:#cc0b2b;
+$black: #000000;
+$white: #ffffff;
+$header-font: 'Bowlby One SC', cursive;
+$heading-font: 'Patua One', cursive;
+$paragraph-font: 'Open Sans', sans-serif;
+
+
+$border-radius-lg: 15px;
+$border-radius-sm: 5px;
+
+$shadow: .3rem .6rem .9rem -.4rem rgba(0, 0, 10, 0.50);
+
+body {
+    font-family: $paragraph-font;
+    background-color: $light-yellow;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: $header-font;
+    text-align: center;
+    color: $white;
+    background-color: $dark-blue;
+    font-size: 2.5rem;
+    letter-spacing: 0.25rem;
+}
+
+h2, h3, h4, h5 {
+    font-family: $heading-font;
+    color: $dark-blue;
+}
+
+div {
+    margin: 1rem;
+}
+
+button {
+    color: $white;
+    background-color: $red;
+    border: none;
+    padding: 0.5rem;
+    border-radius: $border-radius-sm;
+    cursor: pointer;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.reading-list {
+    display: flex;
+}
+
+#reading-list-btn {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: $heading-font;
+    font-size: 1.25rem;
+
+}
+
+.menu-container {
+    #dropdown-btn {
+        display: flex;
+        justify-content: space-between;
+        background-color: $dark-yellow;
+        padding: 0.6rem;
+        color: $red;
+        border: $dark-blue 1px solid;
+        border-radius: $border-radius-sm;
+        margin: 0;
+        cursor: pointer;
+
+        p {
+            margin: 0 1rem;
+        }
+    }
+}
+
+.form-outline {
+    display: flex;
+}
+
+.form-check-input {
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.25rem;
+    cursor: pointer;
+  }
+
+
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size:  0.5rem 1rem;
+    border: white 1px solid;
+    border-radius: $border-radius-sm;
+  }
+
+  .book-card {
+      background-color: $white;
+      padding: 1rem;
+      box-shadow: $shadow;
+      border-radius: $border-radius-lg;
+      display: grid;
+      grid-template-areas: 
+      'title title'
+      'picture author'
+      'picture category'
+      'picture id';
+
+      > p, img {
+          margin: 1rem;
+      }
+
+      b {
+          color: $red;
+      }
+
+      .title-save {
+          grid-area: title;
+          display: flex;
+          justify-content: center;
+
+          h3 {
+              width: 80%;
+          }
+
+          button {
+              margin: auto;  
+              background-color: $white;
+              color: $dark-blue;
+              border: $dark-blue 1px solid;
+              padding: 0.5rem 1rem;
+          }
+      }
+
+      button {
+          grid-area: save;
+      }
+
+      img {
+          grid-area: picture;
+      }
+
+      p.author {
+          grid-area: author;
+      }
+      p.category {
+        grid-area: category;
+    }
+
+    p.idNumber {
+        grid-area: id;
+    }
+      
+
+
+  }

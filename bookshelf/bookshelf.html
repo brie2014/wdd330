@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web application to find and save books to read using Google Books API">
+    <title>Find a Book Web Application</title>
+    <link rel="stylesheet" href="css/bookshelf.css">
+</head>
+
+<body>
+    <h1>Find a Book</h1>
+    <div class="reading-list">
+        <button type="button" id="reading-list-btn">
+            My Reading List
+        </button>
+    </div>
+    <div class="input-group">
+        <div class="form-outline">
+            <input type="search" id="user-query" class="form-control" placeholder="I'm looking for..." />
+            <button type="button" id="search">
+                &#128269;
+            </button>
+        </div>
+        <div class="container">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="searchType" id="all" value="" checked>
+                <label class="form-check-label" for="all">
+                    All
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="searchType" id="title" value="+intitle:">
+                <label class="form-check-label" for="title">
+                    By Title
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="searchType" id="author" value="+inauthor:">
+                <label class="form-check-label" for="author">
+                    By Author
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="searchType" id="subject" value="+subject:">
+                <label class="form-check-label" for="topic">
+                    By Topic
+                </label>
+            </div>
+        </div>
+        <div class="menu-container" id="menu">
+            <div id="dropdown-btn" onclick="toggleNav()">
+                <p>Advanced Search Options</p>
+                <p>&#9776;</p>
+            </div>
+            <div class="hidden filters" id="filter-list">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="filter" id="all" value="" checked>
+                    <label class="form-check-label" for="all">
+                        View All Titles
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="filter" id="ebooks" value="&filter=ebooks">
+                    <label class="form-check-label" for="ebook">
+                        Ebooks Only
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="filter" id="free-ebooks"
+                        value="&filter=free-ebooks">
+                    <label class="form-check-label" for="ebook">
+                        Free Ebooks
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="filter" id="paid-ebooks"
+                        value="&filter=paid-ebooks">
+                    <label class="form-check-label" for="paid-ebooks">
+                        Paid Ebooks
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div id="results" class="book-card-container results">
+    </div>
+    <div class="book-card-container saved"></div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
