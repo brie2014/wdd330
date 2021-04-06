@@ -40,7 +40,7 @@ button {
 
 #reading-list-btn {
   width: 80%;
-  margin: 0 auto;
+  margin: 0 10%;
   padding: 1rem;
   font-family: "Patua One", cursive;
   font-size: 1.25rem; }
@@ -108,3 +108,6 @@ button {
     grid-area: category; }
   .book-card p.idNumber {
     grid-area: id; }
+
+.saved {
+  background-color: #94c9f8; }

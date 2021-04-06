@@ -43,8 +43,7 @@ const hikeList = [
 ];
 
 const comments = JSON.parse(localStorage.getItem('hikes')) || [];
-con
-  st commentList = document.querySelector('.comments');
+const commentList = document.querySelector('.comments');
 
   
 

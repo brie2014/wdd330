@@ -12,10 +12,14 @@
 
 <body>
     <h1>Find a Book</h1>
-    <div class="reading-list">
-        <button type="button" id="reading-list-btn">
-            My Reading List
-        </button>
+    <button type="button" id="reading-list-btn">
+        My Reading List
+    </button>
+    <div class="book-card-container">
+        <div id="saved" class="hidden">
+
+        </div>
+        
     </div>
     <div class="input-group">
         <div class="form-outline">
@@ -51,7 +55,7 @@
             </div>
         </div>
         <div class="menu-container" id="menu">
-            <div id="dropdown-btn" onclick="toggleNav()">
+            <div id="dropdown-btn">
                 <p>Advanced Search Options</p>
                 <p>&#9776;</p>
             </div>
@@ -85,12 +89,10 @@
             </div>
         </div>
     </div>
+    <div id="results" class="book-card-container results">
 
     </div>
-    <div id="results" class="book-card-container results">
-    </div>
-    <div class="book-card-container saved"></div>
-    <script src="js/main.js"></script>
+    <script src="js/MVC/mainMVC.js" type="module"></script>
 </body>
 
 </html>

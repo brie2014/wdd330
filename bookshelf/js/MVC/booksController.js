@@ -1,77 +1,87 @@
-import { getLocation } from './utilities.js';
-import Quake from './Quake.js';
-import QuakesView from './QuakesView.js';
+import { } from './booksAPI.js';
+import Books from './booksModel.js';
+import BooksView from './booksView.js';
 
-// Quake controller
+
+// Book controller
 export default class BooksController {
-  constructor(parent, position = null) {
+  constructor(parent) {
     this.parent = parent;
-    // sometimes the DOM won't exist/be ready when the Class gets instantiated, so we will set this later in the init()
-    this.parentElement = null;
-    // this is how our controller will know about the model and view...we add them right into the class as members.
-    this.quakes = new Book();
-    this.quakesView = new BooksView();
+    //add model and view right into the class as members.
+    this.books = new Books();
+    this.booksView = new BooksView();
   }
-  
+
+  //add event listener to each book
+  addSaveListener(q) {
+    const buttons = document.querySelectorAll(q);
+    const bookCards = Array.from(buttons);
+    console.log(bookCards);
+    bookCards.forEach(card => {
+      console.log(card);
+      card.addEventListener('click', e => {
+        this.saveBook(card.parentElement.parentElement, 'savedBooks');
+      });
+    });
+  }
+
+
   async init() {
-    // use this as a place to grab the element identified by this.parent, do the initial call of this.initPos(), and display some quakes by calling this.getQuakesByRadius()
+    // use this as a place to grab the element identified by this.parent and display searched books by calling this.getBooks()
     this.parentElement = document.querySelector(this.parent);
-    await this.initPos();
-    this.getQuakesByRadius(100);
-  }
-  async initPos() {
-    // if a position has not been set
-    if (this.position.lat === 0) {
-      try {
-        // try to get the position using getLocation()
-        var positions = await getLocation();
-        // if we get the location back then set the latitude and longitude into this.position
-        this.position.lat = positions.coords.latitude;
-        this.position.lon = positions.coords.longitude;
-        
-      } catch (error) {
-        console.log(error);
-      }
-    }
+    this.getBooks();
+
   }
 
-  async getQuakesByRadius(radius) {
-    // this method provides the glue between the model and view. Notice it first goes out and requests the appropriate data from the model, then it passes it to the view to be rendered.
+  async getBooks() {
     //set loading message
-    this.parentElement.innerHTML = '<li>Loading...</li>';
-    //get radius from user input
-    radius = document.getElementById('radius').value;
-    if (radius === '') {radius = 100};
-    // get the list of quakes in the specified radius of the location
-    const quakeList = await this.quakes.getEarthQuakesByRadius(
-      this.position,
-      radius
-    );
-    // render the list to html
-    this.quakesView.renderQuakeList(quakeList, this.parentElement);
+    this.parentElement.innerHTML = '<div>Loading...</div>';
 
-    // add a listener to the new list of quakes to allow drill down in to the details
-    //this.addQuakeListener(); 
+    // get the list of books matching search terms (MODEL)
+    const bookSearch = await this.books.searchBooks();
+    console.log(bookSearch);
+
+    // render the list to html (VIEW)
+    this.parentElement.innerHTML = '';
+    this.booksView.renderBookList(bookSearch, this.parentElement);
+
+    // add a listener to each book
+    this.addSaveListener('.saveBtn');
+
+    //this.rendersavedBookList();
+
   }
 
-
-    //add event listener to each quake...why is this not working??
-    async addQuakeListener() {
-        // convert items to an array so we can add event listener
-        const childrenArray = Array.from(this.parentElement.children);
-        childrenArray.forEach(child => {
-            child.addEventListener('click', e => {
-                this.getQuakeDetails(e.target.dataset.name);
-                console.log(e.target.dataset.name);
-            });
-        });
-        
+    //Save book to local storage
+    async saveBook(item, location) {
+      const savedBooks = JSON.parse(localStorage.getItem('savedBooks')) || [];
+      const bookList = document.querySelector('.saved');
+      console.log(item)
+      const newBook = {
+        //title: item.volumeInfo.title,
+        //author: item.volumeInfo.authors,
+        //imageSource: item.volumeInfo.imageLinks.thumbnail,
+        //category: item.volumeInfo.categories,
+        //idType: item.volumeInfo.industryIdentifiers[0].type,
+        //id: item.volumeInfo.industryIdentifiers[0].identifier
+        id: item.id,
+        content: item.innerHTML,
+      };
+      savedBooks.push(newBook);
+      localStorage.setItem(location, JSON.stringify(savedBooks));
+      this.booksView.rendersavedBookList();
+      //console.log(savedBooks);
+      //bookList.innerHTML = JSON.stringify(localStorage.getItem('savedBooks'));
     }
 
-  async getQuakeDetails(quakeId) {
+
+
+
+  /*async getQuakeDetails(quakeId) {
     // get the details for the quakeId provided from the model, then send them to the view to be displayed
     var quakes = this.quakes.getQuakeById(quakeId);
     //console.log(quakes);
     this.quakesView.renderQuake(quakes, this.parentElement);
-  }
+  }*/
 }
+
