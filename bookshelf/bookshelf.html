@@ -7,19 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Web application to find and save books to read using Google Books API">
     <title>Find a Book Web Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bookshelf.css">
 </head>
 
 <body>
     <h1>Find a Book</h1>
-    <div class="rl-container">
-        <button type="button" id="reading-list-btn">
-            My Reading List
-        </button>
-        <div id="saved" class="book-card-container hidden-saved">
-        </div>
-    </div>
-    <div class="main-container">
+    
+    <div id="container">
         <div class="input-group">
             <div class="search-container">
                 <input type="search" id="user-query" class="textbox" placeholder="I'm looking for..." />
@@ -58,7 +53,7 @@
                     <p>Advanced Search Options</p>
                     <p>&#9776;</p>
                 </div>
-                <div class="hidden filters" id="filter-list">
+                <div class="hidden container" id="filter-list">
                     <div class="radio">
                         <input class="radio-btn" type="radio" name="filter" id="all" value="" checked>
                         <label class="radio-label" for="all">
@@ -88,9 +83,19 @@
                 </div>
             </div>
         </div>
-        <div id="results" class="book-card-container results">
+        <div class="rl-container">
+            <button type="button" id="reading-list-btn">
+               Show Saved Books
+            </button>
+            <div id="saved" class="book-card-container hidden-saved">
+            </div>
         </div>
-    </div>
+        <div class="main-container">
+            
+            
+            <div id="results" class="book-card-container results">
+            </div>
+        </div>
 
     <script src="js/MVC/mainMVC.js" type="module"></script>
 </body>

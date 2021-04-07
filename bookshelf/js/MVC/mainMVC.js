@@ -1,5 +1,5 @@
 import BooksController from './booksController.js';
-import {toggleOptions, toggleBookList} from './utilities.js'
+import {toggleOptions, toggleBookListSmall} from './utilities.js'
 
 let searchBtn = document.getElementById("search");
 let advancedBtn = document.getElementById("dropdown-btn");
@@ -14,24 +14,16 @@ window.addEventListener("load", () => {
 })
 
 advancedBtn.addEventListener("click", toggleOptions);
-savedBtn.addEventListener("click", toggleBookList);
+window.addEventListener("resize", toggleBookListSmall);
+
+
+
+
+
 
 /*
-Fix delete glitch where it doesn't delete out of local storage
 Pagination of results
-fix saved books to left and querySelectorAll
-#leftCol {
-    position: fixed;
-    width: 150px;
-    overflow-y: scroll;
-    top: 0;
-    bottom: 0;
-}
-style buttons better
-style bookcards
-hover and click effects
-fix sizing
-style advanced search options
+fix view more button and listeners
 add more filters
 whack-a-mole game
 fix SWAPI

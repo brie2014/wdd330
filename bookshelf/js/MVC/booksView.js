@@ -15,7 +15,7 @@ export default
             const books = `<div class="saved book-card" id="${book.id}">${book.content}</div>`;
             bookList.insertAdjacentHTML("afterbegin", books);
 
-            //Edit html for saved book cards
+            //Edit html for saved book cards--less info and add trash button
             let savedIds = bookList.querySelectorAll('.idNumber');
             savedIds.forEach(savedId => {savedId.remove()});
             let savedCategories = bookList.querySelectorAll('.category');
@@ -23,21 +23,18 @@ export default
             let buttonsToChange = bookList.querySelectorAll('.saveBtn');
             buttonsToChange.forEach(button => {button.classList.remove('saveBtn')});
             buttonsToChange.forEach(button => {button.classList.add('deleteBtn')});
-            buttonsToChange.forEach(button => {button.innerHTML="delete"});
+            buttonsToChange.forEach(button => {button.innerHTML=`<i class="fa fa-trash"></i>`});
         });
     }
 }
 
 //Script to generate each bookcard
 function bookCard(item, resultsElement) {
-    console.log(item.volumeInfo.infoLink);
     const books = `
         <div class="book-card" id="${item.id}">
         <div class="title-save">
-        <a href="${item.volumeInfo.infoLink}" target="_blank">
-        <h3>${item.volumeInfo.title}</h3> 
-        </a>
-         <button class="saveBtn" id="${item.id}">Save</button>
+        <h3><a href="${item.volumeInfo.infoLink}" target="_blank">${item.volumeInfo.title}</a></h3> 
+         <button class="saveBtn" id="${item.id}"><i class="fa fa-bookmark-o"></i></button>
         </div>
          <img src="${item.volumeInfo.imageLinks.thumbnail}" alt="cover of ${item.volumeInfo.title}">
          <p class="author"><b>Author:</b> ${item.volumeInfo.authors}</p>

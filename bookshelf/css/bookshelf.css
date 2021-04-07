@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Patua+One&display=swap");
+html {
+  margin: 0; }
+
 body {
   margin: 0;
   font-size: 14px;
@@ -18,22 +21,20 @@ h2, h3 {
   color: #3a1e9e;
   font-size: 1.5rem; }
 
+h3 {
+  margin: 0.5rem 0; }
+
 button {
   border: none;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 5px;
-  cursor: pointer; }
-
-.hidden, .hidden-saved {
-  display: none; }
+  cursor: pointer;
+  font-family: "Patua One", cursive; }
 
 .container {
   display: flex;
   justify-content: space-around;
   margin: 0; }
-
-.reading-list {
-  display: flex; }
 
 #reading-list-btn {
   color: #ffffff;
@@ -66,7 +67,6 @@ button {
   display: flex; }
 
 .radio-btn {
-  position: absolute;
   margin-top: 0.3rem;
   margin-left: -1.25rem;
   cursor: pointer; }
@@ -86,21 +86,32 @@ button {
   box-shadow: 0.3rem 0.6rem 0.9rem -0.4rem rgba(0, 0, 10, 0.5);
   border-radius: 15px;
   display: grid;
-  grid-gap: 1rem;
-  grid-template-areas: 'title title' 'picture author' 'picture category' 'picture id' 'view view' 'desc desc'; }
+  grid-gap: 10px;
+  grid-template-areas: 'title title' 'picture author' 'picture category' 'picture id' 'view view' 'desc desc';
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .book-card b {
     color: #cc0b2b; }
+  .book-card p {
+    margin-top: 0;
+    margin-left: 1rem; }
   .book-card .title-save {
     grid-area: title;
-    display: flex; }
+    display: flex;
+    padding: 0 1rem;
+    justify-content: space-between; }
     .book-card .title-save a {
-      width: 80%;
-      font-size: 1.15rem; }
-    .book-card .title-save button {
-      padding: 0 0.5rem;
-      height: 50%; }
+      color: #3a1e9e;
+      width: 80%; }
+  .book-card button {
+    color: #3a1e9e;
+    background-color: #ffffff;
+    border: solid 1px #3a1e9e;
+    margin: 0.5rem 0rem 0.5rem 0.5rem;
+    font-size: 1.5rem; }
   .book-card img {
-    grid-area: picture; }
+    grid-area: picture;
+    max-width: 100%;
+    padding: 0 0 0 1rem; }
   .book-card p.author {
     grid-area: author; }
   .book-card p.category {
@@ -111,40 +122,105 @@ button {
     grid-area: view;
     color: #cc0b2b;
     text-decoration: underline;
-    cursor: pointer; }
+    cursor: pointer;
+    padding: 1rem; }
   .book-card .description {
-    grid-area: desc; }
+    grid-area: desc;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 1rem; }
+  .book-card button:active, .book-card button:hover, .book-card .clickedBtn {
+    background-color: #3a1e9e;
+    box-shadow: 0.3rem 0.6rem 0.9rem -0.4rem rgba(0, 0, 10, 0.5);
+    color: #ffffff;
+    border: #3a1e9e 1px solid;
+    transform: scale(1.1);
+    content: 'saved'; }
 
-.saved {
-  background-color: #94c9f8; }
-  .saved button:active, .saved button:hover {
+#saved {
+  background-color: #94c9f8;
+  border: #3a1e9e 5px dotted;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 15px; }
+
+.saved.book-card {
+  box-shadow: 0.3rem 0.6rem 0.9rem -0.4rem rgba(0, 0, 10, 0.5);
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: 'title' 'author' 'picture' 'picture' 'view' 'desc';
+  grid-template-columns: minmax(0, 1fr); }
+  .saved.book-card button {
+    color: #cc0b2b;
+    font-weight: bold; }
+  .saved.book-card button:active, .saved.book-card button:hover {
     background-color: #cc0b2b;
     color: #ffffff;
     border: #3a1e9e 1px solid;
-    transform: scale(1.3); }
+    transform: scale(1.2);
+    box-shadow: 0.3rem 0.6rem 0.9rem -0.4rem rgba(0, 0, 10, 0.5); }
+  .saved.book-card .description {
+    grid-area: desc;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 1rem; }
 
-.results button:active, .results button:hover, .results .clickedBtn {
-  background-color: #3a1e9e;
-  color: #ffffff;
-  border: #3a1e9e 1px solid;
-  transform: scale(1.3);
-  content: 'saved'; }
+.loader {
+  margin: auto;
+  border: 16px solid #ffffff;
+  border-top: 16px solid #94c9f8;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite; }
 
-@media (min-width: 700px) {
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+.hidden, .hidden-saved {
+  display: none; }
+
+@media (min-width: 750px) {
+  html {
+    height: 100%; }
+
   body {
-    font-size: 16px;
-    display: grid;
-    grid-template-areas: 'title title' 'main rl';
-    grid-template-columns: 2fr 1fr; }
+    height: 100%;
+    margin: 0;
+    font-size: 16px; }
     body h1 {
-      grid-area: title; }
+      margin-bottom: 0; }
+    body #container {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      grid-template-areas: "search rl" "main rl"; }
+    body .input-group {
+      grid-area: search; }
     body .rl-container {
+      display: inline-block;
+      vertical-align: top;
+      height: 100%;
+      overflow: auto;
       grid-area: rl;
-      background-color: #ffee93;
-      border: #3a1e9e, 2px, dashed; }
+      margin: 0;
+      background-color: #94c9f8;
+      border-left: #3a1e9e 5px dotted; }
       body .rl-container #reading-list-btn {
-        margin-top: 26.8px; }
+        margin: 26.8px 0 0;
+        cursor: auto;
+        width: 100%;
+        border-radius: 0; }
+      body .rl-container #saved {
+        border: none;
+        padding: 0; }
     body .main-container {
+      width: 100%;
+      overflow: auto;
+      vertical-align: top;
+      height: 100%;
       grid-area: main; }
 
   .hidden-saved {
@@ -153,10 +229,10 @@ button {
   #reading-list-btn {
     width: 90%;
     margin: 0 5%; } }
-@media (min-width: 950px) {
-  body {
-    grid-template-columns: 4fr 1fr; }
-
+@media (min-width: 1190px) {
   .results {
     display: grid;
-    grid-template-columns: 1fr 1fr; } }
+    grid-template-columns: 1fr 1fr; }
+
+  body #container {
+    grid-template-columns: 2fr 1fr; } }
