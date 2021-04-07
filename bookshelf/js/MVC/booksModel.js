@@ -42,6 +42,7 @@ export default class Books {
             let idToRemove = book.getAttribute('id');
             let newSavedBooks = this.savedBooks.filter(books => books.id != idToRemove)
             localStorage.setItem(location, JSON.stringify(newSavedBooks));
+      
         }
 
 }

@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
-  background-color: #fcf5c7; }
+  background-color: #fdf8da; }
 
 h1 {
   font-family: "Bowlby One SC", cursive;
@@ -65,6 +65,15 @@ button {
 
 .search-container {
   display: flex; }
+
+#filter-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #ffffff;
+  border-radius: 5px; }
+  #filter-list div.radio {
+    display: flex;
+    justify-content: center; }
 
 .radio-btn {
   margin-top: 0.3rem;
@@ -179,7 +188,7 @@ button {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
-.hidden, .hidden-saved {
+.hidden, .hidden-saved, #filter-list.hidden {
   display: none; }
 
 @media (min-width: 750px) {

@@ -10,20 +10,20 @@ export default
     rendersavedBookList() {
         const savedBooks = JSON.parse(localStorage.getItem('savedBooks')) || [];
         const bookList = document.getElementById('saved');
-        bookList.innerHTML="";
+        bookList.innerHTML = "";
         savedBooks.forEach(book => {
             const books = `<div class="saved book-card" id="${book.id}">${book.content}</div>`;
             bookList.insertAdjacentHTML("afterbegin", books);
 
             //Edit html for saved book cards--less info and add trash button
             let savedIds = bookList.querySelectorAll('.idNumber');
-            savedIds.forEach(savedId => {savedId.remove()});
+            savedIds.forEach(savedId => { savedId.remove() });
             let savedCategories = bookList.querySelectorAll('.category');
-            savedCategories.forEach(category => {category.remove()});
+            savedCategories.forEach(category => { category.remove() });
             let buttonsToChange = bookList.querySelectorAll('.saveBtn');
-            buttonsToChange.forEach(button => {button.classList.remove('saveBtn')});
-            buttonsToChange.forEach(button => {button.classList.add('deleteBtn')});
-            buttonsToChange.forEach(button => {button.innerHTML=`<i class="fa fa-trash"></i>`});
+            buttonsToChange.forEach(button => { button.classList.remove('saveBtn') });
+            buttonsToChange.forEach(button => { button.classList.add('deleteBtn') });
+            buttonsToChange.forEach(button => { button.innerHTML = `<i class="fa fa-trash"></i>` });
         });
     }
 }
@@ -50,19 +50,21 @@ function bookCard(item, resultsElement) {
 }
 
 //Checking to make sure each property is there
-function checkProperties (item) {
-    if('imageLinks' in item.volumeInfo){}
-            else {
-                item.volumeInfo.imageLinks = '';
-            }
-            if( 'searchInfo' in item){}
-            else {
-                item.searchInfo = 'no description available'
-            }
-            if( 'industryIdentifiers' in item.volumeInfo){}
-            else {
-                item.volumeInfo.industryIdentifiers = 'no id available'
-            }
+function checkProperties(item) {
+    if (!('imageLinks' in item.volumeInfo)) {
+        // Set your default
+    }
+    if (!('imageLinks' in item.volumeInfo)) {
+        item.volumeInfo.imageLinks = '';
+    }
+
+    if (!('searchInfo' in item)) {
+        item.searchInfo = 'no description available'
+    }
+
+    if (!('industryIdentifiers' in item.volumeInfo)) {
+        item.volumeInfo.industryIdentifiers = 'no id available'
+    }
 }
-  
+
 
