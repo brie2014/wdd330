@@ -1,8 +1,9 @@
-import { getJSON } from './booksAPI.js';
-// Quake Model
+import { getJSON } from './utilities.js';
+
+//Books Model
 export default class Books {
     constructor() {
-        const input = document.getElementById("user-query").value;
+        this.savedBooks = JSON.parse(localStorage.getItem('savedBooks')) || [];
         //Setup url
         this.baseUrl = `https://www.googleapis.com/books/v1/volumes?q=`;
     }
@@ -16,19 +17,30 @@ export default class Books {
         if (input === '') { window.alert('Please enter search terms to search.') };
         let myKey = 'AIzaSyDPR8cteFuQVST1bDSeXmc42TCeWggqyxo';
         // use the getJSON function and the position provided to build out the correct URL to get the data we need.  Store it into this._booksearch, then return it
-        const query = this.baseUrl + `${searchQ}${input}${filter}&startIndex=0&maxResults=10&key=${myKey}`;
+        const query = this.baseUrl + `${searchQ}${input}${filter}&startIndex=0&maxResults=40&key=${myKey}`;
         console.log(query);
         this.bookSearch = await getJSON(query);
         return this.bookSearch;
     }
 
-    async getBookbyId(id) {
-        // filter this._quakes for the record identified by id and return it
-        return this.books.items.filter(item => item.id === id)[0];
+    //Save book to local storage
+    async saveBook(item, location) {
+        const newBook = {
+            id: item.id,
+            content: item.innerHTML,
+        };
+        this.savedBooks.push(newBook);
+        localStorage.setItem(location, JSON.stringify(this.savedBooks));
     }
 
-  
+    //Delete book from localstorage
+    async deleteBook(item, location) {
+        let book = item;
+        let idToRemove = book.getAttribute('id');
+        let newSavedBooks = this.savedBooks.filter(books => books.id != idToRemove)
+        localStorage.setItem(location, JSON.stringify(newSavedBooks));
 
+    }
 }
 
 

@@ -1,8 +1,5 @@
 /*
 Pagination of results
-View more info on click of book card
-Clean up stylesheet
-Large view
 */
 
 var results = document.getElementById("results");

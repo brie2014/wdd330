@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAQ,wKAAgK;AAcxK,OAAQ;EACJ,OAAO,EAAE,IAAI",
-"sources": ["bookshelf.scss"],
-"names": [],
-"file": "bookshelf.css"
-}

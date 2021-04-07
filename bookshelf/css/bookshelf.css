@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Patua+One&display=swap");
 body {
+  margin: 0;
+  font-size: 14px;
   font-family: "Open Sans", sans-serif;
-  background-color: #fcf5c7;
-  margin: 0 auto; }
+  background-color: #fcf5c7; }
 
 h1 {
   font-family: "Bowlby One SC", cursive;
@@ -12,12 +13,10 @@ h1 {
   font-size: 2.5rem;
   letter-spacing: 0.25rem; }
 
-h2, h3, h4, h5 {
+h2, h3 {
   font-family: "Patua One", cursive;
-  color: #3a1e9e; }
-
-div {
-  margin: 1rem; }
+  color: #3a1e9e;
+  font-size: 1.5rem; }
 
 button {
   border: none;
@@ -25,7 +24,7 @@ button {
   border-radius: 5px;
   cursor: pointer; }
 
-.hidden {
+.hidden, .hidden-saved {
   display: none; }
 
 .container {
@@ -58,16 +57,21 @@ button {
   .menu-container #dropdown-btn p {
     margin: 0 1rem; }
 
-.form-outline {
+.input-group {
+  margin: 1rem; }
+  .input-group div {
+    padding: 0.5rem; }
+
+.search-container {
   display: flex; }
 
-.form-check-input {
+.radio-btn {
   position: absolute;
   margin-top: 0.3rem;
   margin-left: -1.25rem;
   cursor: pointer; }
 
-.form-control {
+.textbox {
   display: block;
   width: 100%;
   padding: 1rem;
@@ -78,24 +82,23 @@ button {
 .book-card {
   background-color: #ffffff;
   padding: 1rem;
+  margin: 1rem;
   box-shadow: 0.3rem 0.6rem 0.9rem -0.4rem rgba(0, 0, 10, 0.5);
   border-radius: 15px;
   display: grid;
-  grid-template-areas: 'title title' 'picture author' 'picture category' 'picture id'; }
-  .book-card > p, .book-card img {
-    margin: 1rem; }
+  grid-gap: 1rem;
+  grid-template-areas: 'title title' 'picture author' 'picture category' 'picture id' 'view view' 'desc desc'; }
   .book-card b {
     color: #cc0b2b; }
   .book-card .title-save {
     grid-area: title;
-    display: flex;
-    justify-content: center; }
-    .book-card .title-save h3 {
-      width: 80%; }
+    display: flex; }
+    .book-card .title-save a {
+      width: 80%;
+      font-size: 1.15rem; }
     .book-card .title-save button {
-      margin: auto;
-      padding: 0.5rem 1rem;
-      grid-area: save; }
+      padding: 0 0.5rem;
+      height: 50%; }
   .book-card img {
     grid-area: picture; }
   .book-card p.author {
@@ -104,6 +107,13 @@ button {
     grid-area: category; }
   .book-card p.idNumber {
     grid-area: id; }
+  .book-card .viewMore {
+    grid-area: view;
+    color: #cc0b2b;
+    text-decoration: underline;
+    cursor: pointer; }
+  .book-card .description {
+    grid-area: desc; }
 
 .saved {
   background-color: #94c9f8; }
@@ -119,3 +129,34 @@ button {
   border: #3a1e9e 1px solid;
   transform: scale(1.3);
   content: 'saved'; }
+
+@media (min-width: 700px) {
+  body {
+    font-size: 16px;
+    display: grid;
+    grid-template-areas: 'title title' 'main rl';
+    grid-template-columns: 2fr 1fr; }
+    body h1 {
+      grid-area: title; }
+    body .rl-container {
+      grid-area: rl;
+      background-color: #ffee93;
+      border: #3a1e9e, 2px, dashed; }
+      body .rl-container #reading-list-btn {
+        margin-top: 26.8px; }
+    body .main-container {
+      grid-area: main; }
+
+  .hidden-saved {
+    display: block; }
+
+  #reading-list-btn {
+    width: 90%;
+    margin: 0 5%; } }
+@media (min-width: 950px) {
+  body {
+    grid-template-columns: 4fr 1fr; }
+
+  .results {
+    display: grid;
+    grid-template-columns: 1fr 1fr; } }
