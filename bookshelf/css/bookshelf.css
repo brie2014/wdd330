@@ -48,10 +48,9 @@ button {
 .menu-container #dropdown-btn {
   display: flex;
   justify-content: space-between;
-  background-color: #ffee93;
+  background-color: #3a1e9e;
   padding: 0.6rem;
-  color: #cc0b2b;
-  border: #3a1e9e 1px solid;
+  color: #ffffff;
   border-radius: 5px;
   margin: 0;
   cursor: pointer; }
@@ -70,6 +69,7 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: #ffffff;
+  border: 1px solid #cc0b2b;
   border-radius: 5px; }
   #filter-list div.radio {
     display: flex;
