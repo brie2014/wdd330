@@ -39,7 +39,7 @@ export default class BooksController {
       buttons.forEach(button => {
         button.addEventListener('click', e => {
           this.books.saveBook(button.parentElement.parentElement, 'savedBooks');
-          //this.init();
+          this.init();
           button.classList.add('clickedBtn');
         });
       });
@@ -51,7 +51,7 @@ export default class BooksController {
       buttons.forEach(button => {
         button.addEventListener('click', () => {
           this.books.deleteBook(button.parentElement.parentElement, 'savedBooks');
-          //this.init();
+          this.init();
         });
       });
     }
