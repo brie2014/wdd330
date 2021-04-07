@@ -24,30 +24,6 @@ export default class Books {
         return this.bookSearch;
     }
 
-    //Save book to local storage
-    async saveBook(item, location) {
-        const newBook = {
-            id: item.id,
-            content: item.innerHTML,
-        };
-        this.savedBooks.push(newBook);
-        localStorage.setItem(location, JSON.stringify(this.savedBooks));
-        //this.rendersavedBookList();
-          //this.addDeleteListener('.deleteBtn');
-          //this.addViewMore('.viewMore');
-    }
-
-    //Delete book from localstorage
-    async deleteBook(item, location) {
-        let book = item;
-        let idToRemove = book.getAttribute('id');
-        let newSavedBooks = this.savedBooks.filter(books => books.id != idToRemove)
-        localStorage.setItem(location, JSON.stringify(newSavedBooks));
-        //this.rendersavedBookList();
-          //this.addDeleteListener('.deleteBtn');
-          //this.addViewMore('.viewMore');
-
-    }
 }
 
 
