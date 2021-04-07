@@ -41,14 +41,16 @@ export default class BooksController {
         button.addEventListener('click', e => {
           this.books.saveBook(button.parentElement.parentElement, 'savedBooks');
           this.booksView.rendersavedBookList();
-          this.addDeleteListener('.deleteBtn');
-          this.addViewMore('.viewMore');
+          
         });
         button.addEventListener('click', e => {
           button.classList.add('clickedBtn');
           button.innerHTML = 'Saved!'
         });
+        this.addDeleteListener('.deleteBtn');
+          this.addViewMore('.viewMore');
       });
+
     }
   
     //add listener to each delete button
@@ -58,9 +60,11 @@ export default class BooksController {
         card.addEventListener('click', () => {
           this.books.deleteBook(card.parentElement.parentElement, 'savedBooks');
           this.booksView.rendersavedBookList();
-          this.addDeleteListener('.deleteBtn');
-          this.addViewMore('.viewMore');
+          //this.addDeleteListener('.deleteBtn');
+          //this.addViewMore('.viewMore');
         });
+        this.addDeleteListener('.deleteBtn');
+          this.addViewMore('.viewMore');
       });
     }
 
