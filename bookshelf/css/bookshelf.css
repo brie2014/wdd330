@@ -20,8 +20,6 @@ div {
   margin: 1rem; }
 
 button {
-  color: #ffffff;
-  background-color: #cc0b2b;
   border: none;
   padding: 0.5rem;
   border-radius: 5px;
@@ -39,6 +37,8 @@ button {
   display: flex; }
 
 #reading-list-btn {
+  color: #ffffff;
+  background-color: #cc0b2b;
   width: 80%;
   margin: 0 10%;
   padding: 1rem;
@@ -94,12 +94,8 @@ button {
       width: 80%; }
     .book-card .title-save button {
       margin: auto;
-      background-color: #ffffff;
-      color: #3a1e9e;
-      border: #3a1e9e 1px solid;
-      padding: 0.5rem 1rem; }
-  .book-card button {
-    grid-area: save; }
+      padding: 0.5rem 1rem;
+      grid-area: save; }
   .book-card img {
     grid-area: picture; }
   .book-card p.author {
@@ -111,3 +107,15 @@ button {
 
 .saved {
   background-color: #94c9f8; }
+  .saved button:active, .saved button:hover {
+    background-color: #cc0b2b;
+    color: #ffffff;
+    border: #3a1e9e 1px solid;
+    transform: scale(1.3); }
+
+.results button:active, .results button:hover, .results .clickedBtn {
+  background-color: #3a1e9e;
+  color: #ffffff;
+  border: #3a1e9e 1px solid;
+  transform: scale(1.3);
+  content: 'saved'; }

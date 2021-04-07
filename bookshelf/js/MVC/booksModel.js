@@ -16,7 +16,7 @@ export default class Books {
         if (input === '') { window.alert('Please enter search terms to search.') };
         let myKey = 'AIzaSyDPR8cteFuQVST1bDSeXmc42TCeWggqyxo';
         // use the getJSON function and the position provided to build out the correct URL to get the data we need.  Store it into this._booksearch, then return it
-        const query = this.baseUrl + `${searchQ}${input}${filter}&startIndex=0&maxResults=5&key=${myKey}`;
+        const query = this.baseUrl + `${searchQ}${input}${filter}&startIndex=0&maxResults=10&key=${myKey}`;
         console.log(query);
         this.bookSearch = await getJSON(query);
         return this.bookSearch;

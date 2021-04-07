@@ -1,9 +1,8 @@
 /*
 Pagination of results
 View more info on click of book card
-Refactor code into MVC
 Clean up stylesheet
-Delete saved books
+Large view
 */
 
 var results = document.getElementById("results");

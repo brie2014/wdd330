@@ -2,7 +2,13 @@ export default
     class BooksView {
     renderBookList(bookList, resultsElement) {
         bookList.items.forEach(item => {
-            saveSearch(item, 'currentSearch');
+            if('imageLinks' in item.volumeInfo){
+                
+            }
+            else {
+                item.volumeInfo.imageLinks = '';
+            }
+            //saveSearch(item, 'currentSearch');
             bookCard(item, resultsElement);
         });
             /*.map(quake => {
@@ -17,10 +23,23 @@ export default
     rendersavedBookList() {
         const savedBooks = JSON.parse(localStorage.getItem('savedBooks')) || [];
         const bookList = document.getElementById('saved');
+        bookList.innerHTML="";
         savedBooks.forEach(book => {
             const books = `<div class="saved book-card" id="${book.id}">${book.content}</div>`;
             bookList.insertAdjacentHTML("beforeend", books);
+
+            //Edit html for saved book cards
+            //let savedIds = bookList.querySelectorAll('.idNumber');
+            //savedIds.forEach(savedId => {savedId.remove()});
+            //let savedCategories = bookList.querySelectorAll('.category');
+            //savedCategories.forEach(category => {category.remove()});
+            let buttonsToChange = bookList.querySelectorAll('.saveBtn');
+            buttonsToChange.forEach(button => {button.classList.remove('saveBtn')});
+            buttonsToChange.forEach(button => {button.classList.add('deleteBtn')});
+            buttonsToChange.forEach(button => {button.innerHTML="delete"});
+
         });
+
             /*.map(quake => {
                 return `<li data-id=${quake.id}>
         <div><strong>Location:</strong> ${quake.properties.title}</div> 
@@ -49,47 +68,18 @@ function bookCard(item, resultsElement) {
         <div class="book-card" id="${item.id}">
         <div class="title-save">
         <h3>${item.volumeInfo.title}</h3> 
-         <button class="saveBtn id="${item.id}">Save</button>
+         <button class="saveBtn" id="${item.id}">Save</button>
         </div>
-         <img src="${item.volumeInfo.imageLinks.thumbnail} " alt="cover of ${item.volumeInfo.title}">
+         <img src="${item.volumeInfo.imageLinks.thumbnail}" alt="cover of ${item.volumeInfo.title}">
          <p class="author"><b>Author:</b> ${item.volumeInfo.authors}</p>
-         <p clas="category"><b>Category:</b> ${item.volumeInfo.categories}</p>
+         <p class="category"><b>Category:</b> ${item.volumeInfo.categories}</p>
          <p class="idNumber"><b>${item.volumeInfo.industryIdentifiers[0].type}:</b> ${item.volumeInfo.industryIdentifiers[0].identifier}</p>
       </div>`;
     resultsElement.insertAdjacentHTML("beforeend", books);
 }
 
-function savedBookCard(item, resultsElement) {
-    const books = `
-        <div class="book-card" id="${item.id}">
-        <div class="title-save">
-        <h3>${item.volumeInfo.title}</h3> 
-         <button class="deleteBtn id="${item.id}">Delete</button>
-        </div>
-         <img src="${item.volumeInfo.imageLinks.thumbnail} " alt="cover of ${item.volumeInfo.title}">
-         <p class="author"><b>Author:</b> ${item.volumeInfo.authors}</p>
-      </div>`;
-    resultsElement.insertAdjacentHTML("beforeend", books);
-}
-
-
-
-
-//Save current search to local storage
-function saveSearch(item, location) {
-    const searchedBooks = [];
-    localStorage.removeItem(location);
-    const newBook = {
-        title: item.volumeInfo.title,
-        author: item.volumeInfo.authors,
-        imageSource: item.volumeInfo.imageLinks.thumbnail,
-        category: item.volumeInfo.categories,
-        idType: item.volumeInfo.industryIdentifiers[0].type,
-        id: item.volumeInfo.industryIdentifiers[0].identifier
-    };
-    searchedBooks.push(newBook);
-    localStorage.setItem(location, JSON.stringify(searchedBooks));
-}
-
-
+function isEmpty(o) {
+    return Object.entries(o).every(([k,v]) => v === null);
+  }
+  
 

@@ -12,19 +12,6 @@ export default class BooksController {
     this.booksView = new BooksView();
   }
 
-  //add event listener to each book
-  addSaveListener(q) {
-    const buttons = document.querySelectorAll(q);
-    const bookCards = Array.from(buttons);
-    console.log(bookCards);
-    bookCards.forEach(card => {
-      console.log(card);
-      card.addEventListener('click', e => {
-        this.saveBook(card.parentElement.parentElement, 'savedBooks');
-      });
-    });
-  }
-
 
   async init() {
     // use this as a place to grab the element identified by this.parent and display searched books by calling this.getBooks()
@@ -45,35 +32,92 @@ export default class BooksController {
     this.parentElement.innerHTML = '';
     this.booksView.renderBookList(bookSearch, this.parentElement);
 
-    // add a listener to each book
+    // add a listener to each button
     this.addSaveListener('.saveBtn');
 
     //this.rendersavedBookList();
 
   }
 
-    //Save book to local storage
-    async saveBook(item, location) {
-      const savedBooks = JSON.parse(localStorage.getItem('savedBooks')) || [];
-      const bookList = document.querySelector('.saved');
-      console.log(item)
-      const newBook = {
-        //title: item.volumeInfo.title,
-        //author: item.volumeInfo.authors,
-        //imageSource: item.volumeInfo.imageLinks.thumbnail,
-        //category: item.volumeInfo.categories,
-        //idType: item.volumeInfo.industryIdentifiers[0].type,
-        //id: item.volumeInfo.industryIdentifiers[0].identifier
-        id: item.id,
-        content: item.innerHTML,
-      };
-      savedBooks.push(newBook);
-      localStorage.setItem(location, JSON.stringify(savedBooks));
-      this.booksView.rendersavedBookList();
-      //console.log(savedBooks);
-      //bookList.innerHTML = JSON.stringify(localStorage.getItem('savedBooks'));
+    //add event listener to each book
+    async addSaveListener(q) {
+      const buttons = document.querySelectorAll(q);
+      buttons.forEach(button => {
+        button.addEventListener('click', e => {
+          this.saveBook(button.parentElement.parentElement, 'savedBooks');
+        });
+        button.addEventListener('click', e => {
+          button.classList.add('clickedBtn');
+          button.innerHTML = 'Saved!'
+        });
+      });
     }
+  
+    //add event listener to each book
+    async addDeleteListener(q) {
+      const buttons = document.querySelectorAll(q);
+      buttons.forEach(card => {
+        card.addEventListener('click', () => {
+          this.deleteBook(card.parentElement.parentElement, 'savedBooks');
+        });
+      });
+    }
+  
 
+  //Save book to local storage
+  async saveBook(item, location) {
+    const savedBooks = JSON.parse(localStorage.getItem('savedBooks')) || [];
+    console.log(item)
+    const newBook = {
+      //title: item.volumeInfo.title,
+      //author: item.volumeInfo.authors,
+      //imageSource: item.volumeInfo.imageLinks.thumbnail,
+      //category: item.volumeInfo.categories,
+      //idType: item.volumeInfo.industryIdentifiers[0].type,
+      //id: item.volumeInfo.industryIdentifiers[0].identifier
+      id: item.id,
+      content: item.innerHTML,
+    };
+    savedBooks.push(newBook);
+    localStorage.setItem(location, JSON.stringify(savedBooks));
+    this.booksView.rendersavedBookList();
+    this.addDeleteListener('.deleteBtn');
+    //console.log(savedBooks);
+    //bookList.innerHTML = JSON.stringify(localStorage.getItem('savedBooks'));
+  }
+
+  async getBookInfo(book) {
+    const savedBooks = JSON.parse(localStorage.getItem('savedBooks')) || [];
+    const bookList = document.getElementById('saved');
+
+    savedBooks.forEach(book => {
+      console.log(book.id);
+      let bookInfo = this.filterBook(searchedBooks, book.id);
+      savedBookCard(bookInfo, bookList);
+    });
+    /*.map(quake => {
+        return `<li data-id=${quake.id}>
+<div><strong>Location:</strong> ${quake.properties.title}</div> 
+<div><strong>Date & Time:</strong> ${new Date(quake.properties.time)}</div>
+</li>`;
+    })
+    .join('');*/
+  }
+
+  //Delete item from localstorage and list
+  async deleteBook(item, location) {
+    const savedBooks = JSON.parse(localStorage.getItem('savedBooks')) || [];
+    console.log(savedBooks);
+    let book = item;
+    let idToRemove = book.getAttribute('id');
+    console.log(idToRemove);
+    let newSavedBooks = savedBooks.filter(books => books.id != idToRemove)
+    //item.remove();
+    //savedBooks.splice(`${data}`, 1);
+    localStorage.setItem(location, JSON.stringify(newSavedBooks));
+    this.booksView.rendersavedBookList();
+    this.addDeleteListener('.deleteBtn');
+  }
 
 
 

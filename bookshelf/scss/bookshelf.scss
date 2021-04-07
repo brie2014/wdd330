@@ -42,8 +42,6 @@ div {
 }
 
 button {
-    color: $white;
-    background-color: $red;
     border: none;
     padding: 0.5rem;
     border-radius: $border-radius-sm;
@@ -66,6 +64,8 @@ button {
 }
 
 #reading-list-btn {
+    color: $white;
+    background-color: $red;
     width: 80%;
     margin: 0 10%;
     padding: 1rem;
@@ -144,15 +144,10 @@ button {
 
           button {
               margin: auto;  
-              background-color: $white;
-              color: $dark-blue;
-              border: $dark-blue 1px solid;
               padding: 0.5rem 1rem;
-          }
-      }
+              grid-area: save;
 
-      button {
-          grid-area: save;
+          }
       }
 
       img {
@@ -176,4 +171,29 @@ button {
 
   .saved {
       background-color: $light-blue;
+
+      button:active, button:hover {
+        background-color: $red;
+        color: $white;
+        border: $dark-blue 1px solid;
+        transform: scale(1.3);
+      }
+
+      
   }
+
+  .results {
+    button:active, button:hover, .clickedBtn  {
+        background-color: $dark-blue;
+        color: $white;
+        border: $dark-blue 1px solid;
+        transform: scale(1.3);
+        content: 'saved';
+    }
+
+  }
+
+  .clickedBtn {
+
+  }
+  
