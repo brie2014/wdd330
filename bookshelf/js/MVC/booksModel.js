@@ -3,6 +3,7 @@ import { getJSON } from './utilities.js';
 //Books Model
 export default class Books {
     constructor() {
+        this.input = document.getElementById("user-query").value;
         this.savedBooks = JSON.parse(localStorage.getItem('savedBooks')) || [];
         //Setup url
         this.baseUrl = `https://www.googleapis.com/books/v1/volumes?q=`;
