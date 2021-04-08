@@ -29,6 +29,9 @@ const links = [
     {label: "Week 10 Notes and Practice",
     url: "week10/"},
 
+    {label: "Final Challenge: Find a Book",
+    url: "bookshelf/"}
+
 ];
 
 const ol = document.querySelector('ol');

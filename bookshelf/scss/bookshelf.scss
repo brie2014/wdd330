@@ -3,7 +3,7 @@
 //Colors
 $light-yellow: #fdf8da;
 $dark-yellow:#ffee93 ;
-$light-blue:  #94c9f8 ;
+$light-blue:  #c4e1fa ;
 $dark-blue: #3a1e9e; 
 $red:#cc0b2b;
 $black: #000000;
@@ -37,6 +37,8 @@ body {
 }
 
 h1 {
+    margin: 0;
+    padding: 1rem;
     font-family: $header-font;
     text-align: center;
     color: $white;
@@ -45,12 +47,10 @@ h1 {
     letter-spacing: 0.25rem;
 }
 
-h2, h3 {
+h2 {
     font-family: $heading-font;
     color: $dark-blue;
     font-size: 1.5rem;
-}
-h3 {
     margin: 0.5rem 0;
 }
 
@@ -76,6 +76,10 @@ button {
     padding: 1rem;
     font-family: $heading-font;
     font-size: 1.25rem;
+    &:active, &:hover  {
+        box-shadow: $shadow;
+        transform: scale(1.1);
+    }
 }
 
 
@@ -105,6 +109,11 @@ button {
 
 .search-container {
     display: flex;
+}
+
+button#search {
+    background-color: $red;
+    color: $white;
 }
 
 #filter-list {
@@ -157,6 +166,7 @@ button {
     p {
         margin-top: 0;
         margin-left: 1rem;
+        word-break: break-word;
       }
 
     .title-save {
@@ -178,7 +188,9 @@ button {
         border: solid 1px $dark-blue;
         margin: 0.5rem 0rem 0.5rem 0.5rem;
         font-size: 1.5rem;
-        //padding: 0.5rem 1rem;
+        height: 50px;
+        width: 50px;
+        transition: color 0.3s, background-color 0.3s;
 
         }
 
@@ -212,7 +224,7 @@ button {
         box-shadow: $shadow;
         color: $white;
         border: $dark-blue 1px solid;
-        transform: scale(1.1);
+        transform: scale(1.2);
         content: 'saved';
     }
   }
@@ -221,28 +233,31 @@ button {
 
 #saved {
     background-color: $light-blue;
-    border: $dark-blue 5px dotted;
+    border: $dark-blue 2px dashed;
     padding: 1rem;
     margin: 1rem;
     border-radius: $border-radius-lg;
 }
 .saved.book-card {
-    //background-color: $light-blue;
-    box-shadow: $shadow;
-    display: grid;
-    grid-gap: 10px;
+    background-color: rgb(241, 240, 240);
+    border: 1px solid $dark-blue;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas: 
     'title'
+    'picture'
+    'picture'
     'author'
-    'picture'
-    'picture'
     'view'
     'desc';
-    grid-template-columns: minmax(0, 1fr);
+    
 
     button {
         color: $red;
         font-weight: bold;
+    }
+
+    p.author {
+        margin-bottom: 0;
     }
 
 
@@ -262,11 +277,9 @@ button {
   }
 }
 
-
-
 //Styling for loader while awaiting search results
 .loader {
-    margin: auto;
+    margin: 2rem auto;
     border: 16px solid $white;
     border-top: 16px solid $light-blue; 
     border-radius: 50%;
@@ -287,7 +300,6 @@ button {
 
 
 //Media Queries
-
 @media (min-width: $breakpoint-med) {
     html {
         height: 100%;
@@ -296,25 +308,17 @@ button {
         height: 100%;
         margin: 0;
         font-size: $large;
-        //display: grid;
-        //grid-template-areas: 
-        //'title title'
-        //'main rl';
-        //grid-template-columns: 2fr 1fr;
-
-        h1 {
-            margin-bottom: 0;
-            //grid-area: title;
-        }
 
         #container {
             height: 100%;
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
+            grid-template-columns: 1.25fr 1fr;
+            grid-column-gap: 5rem;
             grid-template-areas: 
             'search rl'
             'main rl'
             ;
+            margin-left: 5rem;
         }
 
         .input-group {grid-area: search;}
@@ -327,13 +331,18 @@ button {
             grid-area: rl;
             margin: 0;
             background-color: $light-blue;
-            border-left: $dark-blue 5px dotted;
+            border-left: $red 2px dashed;
 
             #reading-list-btn {
-                margin: 26.8px 0 0;
+                margin: 0;
                 cursor: auto;
                 width: 100%;
                 border-radius: 0;
+
+                &:hover, &:active {
+                    transform: scale(1);
+                    box-shadow: none;
+                }
             }
 
             #saved {
@@ -359,6 +368,7 @@ button {
         width: 90%;
         margin: 0 5%;
     }
+
 }
 
 @media (min-width: $breakpoint-lg) {

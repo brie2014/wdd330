@@ -12,7 +12,7 @@ function getPeopleAPI(url) {
       });
   }
 
-//  View code
+//  View code c
 function renderPeopleList(people, peopleListElement) {
     // I decided to use a table to display my list of ships. The shipList Element is that table and it has 2 children: thead and tbody...we need to put our ships into tbody...so I reference the second child.
     const list = document.getElementById('people-list')
@@ -26,18 +26,9 @@ function renderPeopleList(people, peopleListElement) {
       <h2 class="name">${person.name}</h2>
       <div class="card"> 
       <div class="info">
-              <div>
-                  <h3>Height</h3>
-                  <p>${person.height}</p>
-              </div>
-              <div>
-                  <h3>Homeworld</h3>
-                  <p>${person.homeworld}</p>
-              </div>
-              <div>
-                  <h3>Hair Color</h3>
-                  <p>${person.hair_color}</p>
-              </div>
+        <p><b>Height: </b>${person.height}</p>
+        <p><b>Hair Color: </b>${person.hair_color}</p>
+        <p><a href="${person.homeworld}">Homeworld Information</a></p>
       </div>
       </div>`;
   

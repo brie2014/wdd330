@@ -1,9 +1,7 @@
 fetch('https://swapi.dev/api/people')
   .then(response => response.json() )
-  .then(peple => console.log(people) )
+  .then(people => console.log(people) )
   .catch( error => console.error('error:', error) );
-
-
 
 
 /*//hacer peticion a la api con fetch

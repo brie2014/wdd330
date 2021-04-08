@@ -10,6 +10,7 @@ export default class BooksController {
     this.booksView = new BooksView();
   }
 
+  //render saved booklist and add listeners to their buttons
   async init() {
     this.booksView.rendersavedBookList();
     this.addDeleteListener('.deleteBtn');
@@ -25,11 +26,11 @@ export default class BooksController {
     // get the list of books matching search terms (MODEL)
     const bookSearch = await this.books.searchBooks();
 
-    // render the list to html (VIEW)
+    //clear loading message and render list to document
     this.parentElement.innerHTML = '';
     this.booksView.renderBookList(bookSearch, this.parentElement);
 
-    // add save listeners to all the buttons
+    // add listeners to all the buttons
     this.init();
   }
 
@@ -38,12 +39,10 @@ export default class BooksController {
     const buttons = document.querySelectorAll(q);
     buttons.forEach(button => {
       button.onclick = e => {
-        // The same code you have in your listener
         this.books.saveBook(button.parentElement.parentElement, 'savedBooks');
         this.init();
         button.classList.add('clickedBtn');
       }
-      //button.addEventListener('click', e => {});
     });
   }
 
@@ -52,11 +51,9 @@ export default class BooksController {
     const buttons = document.querySelectorAll(q);
     buttons.forEach(button => {
       button.onclick = e => {
-        // The same code you have in your listener
         this.books.deleteBook(button.parentElement.parentElement, 'savedBooks');
         this.init();
       }
-      //button.addEventListener('click', () => { });
     });
   }
 
@@ -65,7 +62,6 @@ export default class BooksController {
     const views = document.querySelectorAll(q);
     views.forEach(view => {
       view.onclick = e => {
-        // The same code you have in your listener
         view.nextElementSibling.classList.toggle('hidden');
         if (view.innerHTML == 'Hide Description') {
           view.innerHTML = "Show Description"
@@ -74,7 +70,6 @@ export default class BooksController {
           view.innerHTML = "Hide Description"
         }
       }
-      //view.addEventListener('click', () => {});
     });
   }
 

@@ -38,7 +38,7 @@ export function toggleBookListSmall() {
 
     if (mediaQueryList.matches) {
         savedBtn.removeEventListener("click", toggleBookList);
-        savedBtn.innerHTML = "Saved Books";
+        savedBtn.innerHTML = "My Saved Books";
     }
     else {
         savedBtn.innerHTML = "Show Saved Books";
